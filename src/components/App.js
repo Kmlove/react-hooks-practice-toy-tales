@@ -19,10 +19,14 @@ function App() {
     setShowForm((showForm) => !showForm);
   }
 
+  function onNewToyFormSubmit(newToy){
+    setToys([...toys, newToy])
+  }
+
   return (
     <>
       <Header />
-      {showForm ? <ToyForm /> : null}
+      {showForm ? <ToyForm url={url} onNewToyFormSubmit={onNewToyFormSubmit} /> : null}
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
