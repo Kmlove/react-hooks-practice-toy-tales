@@ -31,6 +31,17 @@ function App() {
     setToys(updatedToys)
   }
 
+  function onToyLike(updatedToy){
+    const updatedToys = toys.map(toy => {
+      if(toy.id === updatedToy.id){
+        return updatedToy
+      } else {
+        return toy
+      }
+    })
+    setToys(updatedToys)
+  }
+
   return (
     <>
       <Header />
@@ -38,7 +49,12 @@ function App() {
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
-      <ToyContainer url={url} toys={toys} onToyDelete={onToyDelete} />
+      <ToyContainer 
+        url={url} 
+        toys={toys} 
+        onToyDelete={onToyDelete} 
+        onToyLike={onToyLike}
+      />  
     </>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import ToyCard from "./ToyCard";
 
-function ToyContainer({toys, url, onToyDelete}) {
+function ToyContainer({toys, url, onToyDelete, onToyLike}) {
 
   const toyCardArray = toys.map(toy => {
     return (
@@ -10,6 +10,7 @@ function ToyContainer({toys, url, onToyDelete}) {
         toy={toy} 
         url={url} 
         onToyDelete={onToyDelete} 
+        onToyLike={onToyLike}
       />
     )
   })
