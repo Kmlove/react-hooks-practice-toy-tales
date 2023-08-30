@@ -32,7 +32,10 @@ function ToyForm({url, onNewToyFormSubmit}) {
       body: JSON.stringify(newToy)
     })
     .then(res => res.json())
-    .then(data => onNewToyFormSubmit(data))
+    .then(data => {
+      onNewToyFormSubmit(data)
+      setFormData(initialValue)
+    })
   }
 
   return (
